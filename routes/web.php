@@ -52,6 +52,8 @@ Route::get('adminpanel/confirmed-campings', 'AdminPanelController@confirmedcampi
 Route::get('adminpanel/rejected-campings', 'AdminPanelController@rejectedcampings');
 Route::get('adminpanel/all-campings', 'AdminPanelController@allcampings');
 
+Route::post('adminpanel/confirm-new-camp', 'AdminPanelController@confirmRejectNewCamp');
+
 
 /*Route::middleware('auth')->group(function () {
     Route::post('/profil', 'ProfilController@index');

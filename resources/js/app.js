@@ -12,6 +12,7 @@
 require('./bootstrap');
 require('./scripts/script_header');
 require('./scripts/script_dashboard');
+require('./scripts/script_admin');
 
 
 

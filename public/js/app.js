@@ -37335,7 +37335,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./scripts/script_header */ "./resources/js/scripts/script_header.js");
 
-__webpack_require__(/*! ./scripts/script_dashboard */ "./resources/js/scripts/script_dashboard.js"); //window.Vue = require('vue');
+__webpack_require__(/*! ./scripts/script_dashboard */ "./resources/js/scripts/script_dashboard.js");
+
+__webpack_require__(/*! ./scripts/script_admin */ "./resources/js/scripts/script_admin.js"); //window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -37407,6 +37409,24 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/scripts/script_admin.js":
+/*!**********************************************!*\
+  !*** ./resources/js/scripts/script_admin.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('.btn-reject-confirm-new-camp').on('click', function () {
+    var $idContactInfoCamping = $('.id-contact-info-camp .id-contact-info-camping').text(),
+        $action = $(this).text();
+    $('.form-in-modal-confirm-reject-new-camp input[name="action"]').attr('value', $action);
+    $('.form-in-modal-confirm-reject-new-camp input[name="id-contact-camping"]').attr('value', $idContactInfoCamping);
+  });
+});
 
 /***/ }),
 

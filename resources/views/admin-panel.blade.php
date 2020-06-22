@@ -26,7 +26,7 @@
                                 <p>ID</p>
                             </div>
                             <div class="float-right pt-2 content-info">
-                                <p>{{$dataCamp->id_contact_info_camping}}</p>
+                                <p class="id-contact-info-camping">{{$dataCamp->id_contact_info_camping}}</p>
                             </div>
                         </div>
                         <div class="username-camp container-info">
@@ -309,92 +309,34 @@
                                 <p><span class="update-info">{{$dataCamp->description_gr}}</span></p>
                             </div>
                         </div>
+                        <button class="btn btn-danger mt-3 btn-reject-confirm-new-camp" data-toggle="modal" data-target="#modal-confirm-reject-new-camp">Reject</button>
+                        <button class="btn btn-success mt-3 float-right btn-reject-confirm-new-camp" data-toggle="modal" data-target="#modal-confirm-reject-new-camp">Confirm</button>
                     </div>
                     @endif
                 @endforeach
             </div>
 
         </div>
-
-        {{--<div class="pl-4 pt-4 main">
-            <div class="mt-4 ml-4 container-user-account-info">
-                <h2>Account</h2>
-                <div class="pb-2 pl-4 pr-4 pt-4 interne-container-user-account-info">
-                    <div class="id-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>ID</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>{{$dataCamp->id_user}}</p>
-                        </div>
-                    </div>
-                    <div class="username-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>Username</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>{{$dataCamp->username}}</p>
-                        </div>
-                    </div>
-                    <div class="email-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>Email</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>{{$dataCamp->email}}</p>
-                        </div>
-                    </div>
-                    <div class="password-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>Password</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>******* <i class="far fa-edit float-right btn-edit-info" data-toggle="modal" data-target="#modal-edit-info"></i></p>
-                            <input type="hidden" value="{{$dataCamp->password}}">
-                        </div>
-                    </div>
-                    <div class="role-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>Role</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>{{ucfirst($dataCamp->role)}}</p>
-                        </div>
-                    </div>
-                    <div class="created-at-account container-info">
-                        <div class="float-left pt-2 title-info">
-                            <p>Created at</p>
-                        </div>
-                        <div class="float-right pt-2 content-info">
-                            <p>{{$dataCamp->created_at}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--}}
     </div>
 </div>
-{{--<div class="modal fade modal-edit-info" id="modal-edit-info">
+<div class="modal fade modal-confirm-reject-new-camp" id="modal-confirm-reject-new-camp">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Update Password</h4>
+                <h4 class="modal-title">Are you sure?</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form action="/dashboard/{{$dataCamp->id_user}}" method="post" class="form-in-modal-edit-info">
+                <form action="/adminpanel/confirm-new-camp" method="post" class="form-in-modal-confirm-reject-new-camp">
                     @csrf
-                    <label for="current-password">Password</label>
-                    <input type="password" name="current-password" value="" id="current-password">
-                    <label class="mt-4" for="new-password">New Password</label>
-                    <input type="password" name="new-password" value="" id="new-password">
-                    <input type="submit" value="Submit" name="update-password" class="mt-4 btn btn-success btn-update-password">
+                    <input type="hidden" name="id-contact-camping">
+                    <input type="hidden" name="action">
+                    <button class="btn btn-danger" data-dismiss="modal">No</button>
+                    <input type="submit" value="Yes" name="confirm-new-camp" class="mt-4 btn btn-success btn-update-info">
+
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-</div>--}}
+</div>
 @endsection

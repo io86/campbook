@@ -11,35 +11,24 @@ class AdminPanelController extends Controller
 {
     public function index()
     {
-        /*echo session('admin');
-
-        if(session('admin') === 'active'){
-
-            $dataNewCamps = $this->getDataNewCamps();
-
-            print_r($dataNewCamps);
-
-            echo gettype($dataNewCamps);
-
-            return view('admin-panel', ['dataNewCamps' => $dataNewCamps]);
-
-        }*/
-
         if(session('admin') !== 'active'){
 
-            return redirect()->back();
+            //return redirect()->back();
 
         }else {
 
-            $dataNewCamps = $this->getDataNewCamps();
+            /*$dataNewCamps = $this->getDataNewCamps();
 
-            print_r($dataNewCamps);
+            print_r($dataNewCamps);*/
 
-            return view('admin-panel', ['dataNewCamps' => $dataNewCamps]);
+            //return view('admin-panel', ['dataCamps' => $dataNewCamps]);
 
         }
 
+        $dataNewCamps = $this->getDataNewCamps();
 
+
+        return view('admin-panel', ['dataCamps' => $dataNewCamps]);
 
     }
 
@@ -58,12 +47,7 @@ class AdminPanelController extends Controller
 
             $dataNewCamps = $this->getDataNewCamps();
 
-            return view('admin-panel', ['dataNewCamps' => $dataNewCamps]);
-
-
-
-
-
+            return view('admin-panel', ['dataCamps' => $dataNewCamps]);
 
         }else{
 
@@ -125,6 +109,30 @@ class AdminPanelController extends Controller
         return view('admin-panel');
     }
 
+    public function confirmRejectNewCamp(Request $request)
+    {
+        $input = $request->all();
+
+        $inputData = array(
+            'id-contact-camping' => $input['id-contact-camping'],
+            'action' => $input['action']
+        );
+
+        $idStatus = 2;
+        if($inputData['action'] === 'Confirm'){
+
+            $idStatus = 1;
+
+        }else{
+
+            $idStatus = 3;
+        }
+
+        $this->updateStatusNewCamp($inputData['id-contact-camping'], $idStatus);
+
+        return redirect()->back();
+    }
+
     private function getDataNewCamps()
     {
         $data = DB::connection('mysqlAdmin')->table('contact_info_campings')
@@ -167,5 +175,12 @@ class AdminPanelController extends Controller
         print_r($data);
 
         return $data;
+    }
+
+    public function updateStatusNewCamp(int $idContactInfoCamp, int $idStatus)
+    {
+        $query = DB::connection('mysqlAdmin')->table('contact_info_campings')
+            ->where('id_contact_info_camping', $idContactInfoCamp)
+            ->update(['id_status' => $idStatus]);
     }
 }
