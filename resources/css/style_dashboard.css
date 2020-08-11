@@ -28,6 +28,7 @@
     list-style-type: none;
 }
 .dashboard-main .main  {
+    border: 3px solid red;
     background-color: #EFF1F4;
     padding-bottom: 500px;
     width: 500px;
@@ -85,6 +86,9 @@
 .modal-edit-info .form-in-modal-edit-info .update-description  {
     height: 300px;
     width: 90%;
+}
+.dashboard-main .main .container-photos-camp  {
+    border: 3px solid blue;
 }
 .color-green  {
     color: green;

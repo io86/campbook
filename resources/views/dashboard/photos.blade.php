@@ -15,7 +15,34 @@
             </ul>
         </div>
         <div class="main">
-            <div class="">Photos
+            <div class="pt-4">
+                <h2 class="ml-4">Your Photos</h2>
+                <div class="pt-4 container-photos-camp">
+                    <div class="row m-0" style="border:1px solid yellow;">
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            {{--@if($dataCamp->img1 === '-')
+                                <img src="" alt="Photo Findcamping">
+                            @else
+                                <img src="" alt="Photo Findcamping">
+                            @endif--}}
+                        </div>
+                        <div class="col-6 col-sm-4" style="border:1px solid red;">
+                            fghnjgdfh
+                        </div>
+                        <div class="col-6 col-sm-4" style="border:1px solid red;">
+                            fghnjgdfh
+                        </div>
+                        <div class="col-6 col-sm-4" style="border:1px solid red;">
+                            fghnjgdfh
+                        </div>
+                        <div class="col-6 col-sm-4" style="border:1px solid red;">
+                            fghnjgdfh
+                        </div>
+                        <div class="col-6 col-sm-4" style="border:1px solid red;">
+                            fghnjgdfh
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

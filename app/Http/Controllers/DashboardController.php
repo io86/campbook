@@ -69,6 +69,31 @@ class DashboardController extends Controller
 
             $dataCamping = $this->getAllDataCamp($idUser);
 
+
+            for($i = 1; $i < 17; $i++){
+
+                $img = 'img'.$i;
+                echo $dataCamping->$img."<br>";
+
+                if($img !== '-'){
+
+                    $pathImage = '/storage/users-photos/'.$idUser.'/img'.$i;
+
+                    if(file_exists($pathImage)){
+
+                        echo 'path exists';
+
+                    }else{
+
+                        echo 'path doesnt exists';
+                    }
+                }
+            }
+            echo "<hr>";
+
+            print_r($dataCamping);
+
+
             return view($template, ['dataCamp' => $dataCamping]);
 
         }else{
@@ -84,6 +109,7 @@ class DashboardController extends Controller
             $idUser = session('id-user');
 
             if(isset($_POST['update-password'])) {
+
                 $curPasswort = $request['current-password'];
                 $newPasswort = $request['new-password'];
                 $actuallPassword = $this->getActualPassword($idUser);
@@ -127,6 +153,7 @@ class DashboardController extends Controller
                 }
 
                 $this->updateInfo($table, $idContactInfoCamping, $updatedCol, $value);
+                $this->statusToBeUpdated($idContactInfoCamping);
 
                 return Redirect::back();
             }
@@ -225,6 +252,14 @@ class DashboardController extends Controller
         $data = DB::connection('mysqlAdmin')->table($table)
             ->where('id_contact_info_camping', $idContactInfoCamping)
             ->update([$updatedCol => $value]);
+
+    }
+
+    private function statusToBeUpdated(int $idContactInfoCamping)
+    {
+        $data = DB::connection('mysqlAdmin')->table('contact_info_camping')
+            ->where('id_contact_info_camping', $idContactInfoCamping)
+            ->update(['id_status' => 4]);
 
     }
 }
