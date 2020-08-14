@@ -20,27 +20,119 @@
                 <div class="pt-4 container-photos-camp">
                     <div class="row m-0" style="border:1px solid yellow;">
                         <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
-                            {{--@if($dataCamp->img1 === '-')
-                                <img src="" alt="Photo Findcamping">
+                            @if($dataCamp->img1 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
                             @else
-                                <img src="" alt="Photo Findcamping">
-                            @endif--}}
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img1}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
-                        <div class="col-6 col-sm-4" style="border:1px solid red;">
-                            fghnjgdfh
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img2 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img2}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
-                        <div class="col-6 col-sm-4" style="border:1px solid red;">
-                            fghnjgdfh
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img3 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img3}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
-                        <div class="col-6 col-sm-4" style="border:1px solid red;">
-                            fghnjgdfh
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img4 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img4}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
-                        <div class="col-6 col-sm-4" style="border:1px solid red;">
-                            fghnjgdfh
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img5 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img5}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
-                        <div class="col-6 col-sm-4" style="border:1px solid red;">
-                            fghnjgdfh
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img6 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img6}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
                         </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img7 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img7}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img8 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img8}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img9 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img9}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img10 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img10}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img11 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img11}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img12 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img12}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img13 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img13}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img14 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img14}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img15 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img15}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+                        <div class="col-6 col-sm-4 p-2" style="border:1px solid red;">
+                            @if($dataCamp->img16 === '-')
+                                <img src="/storage/default-photos/tent.jpg" alt="Photo Findcamping" class="photo-camping">
+                            @else
+                                <img src="storage/app/users-photos/{{$dataCamp->id_user}}/{{$dataCamp->img16}}" alt="Photo {{$dataCamp->name_en}}" class="photo-camping">
+                            @endif
+                        </div>
+
+
                     </div>
                 </div>
             </div>

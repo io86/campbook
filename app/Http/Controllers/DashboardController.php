@@ -69,15 +69,21 @@ class DashboardController extends Controller
 
             $dataCamping = $this->getAllDataCamp($idUser);
 
+            $campImgs = [];
+
+            echo $idUser;
 
             for($i = 1; $i < 17; $i++){
 
                 $img = 'img'.$i;
-                echo $dataCamping->$img."<br>";
+                echo '<br>'.$dataCamping->$img."<br>";
+
+                $campImgs['img'.$i] = $dataCamping->$img;
+                //array_push($campImgs, $dataCamping->$img);
 
                 if($img !== '-'){
 
-                    $pathImage = '/storage/users-photos/'.$idUser.'/img'.$i;
+                    $pathImage = '/storage/app/users-photos/'.$idUser.'/img'.$i;
 
                     if(file_exists($pathImage)){
 
@@ -91,6 +97,8 @@ class DashboardController extends Controller
             }
             echo "<hr>";
 
+            print_r($campImgs);
+            echo "<hr>";
             print_r($dataCamping);
 
 
@@ -139,7 +147,16 @@ class DashboardController extends Controller
                 $idContactInfoCamping = $_POST['hidden-key-value'];
                 $value = $_POST['update-info'];
                 $updatedCol = $_POST['hidden-updated-col'];
-                $description = $_POST['update-info-description'];
+
+                if(isset($_POST['update-info-description'])) {
+
+                    $description = $_POST['update-info-description'];
+
+                    if($description !== ''){
+
+                        $value = $description;
+                    }
+                }
 
                 if($updatedCol === 'area_gr'){
 
@@ -147,13 +164,9 @@ class DashboardController extends Controller
                     $updatedCol = 'id_areas';
                 }
 
-                if($description !== ''){
-
-                    $value = $description;
-                }
-
                 $this->updateInfo($table, $idContactInfoCamping, $updatedCol, $value);
-                $this->statusToBeUpdated($idContactInfoCamping);
+                // Update Status as "inactive"
+                $this->updateStatus(2, $idContactInfoCamping);
 
                 return Redirect::back();
             }
@@ -255,11 +268,19 @@ class DashboardController extends Controller
 
     }
 
-    private function statusToBeUpdated(int $idContactInfoCamping)
+    private function updateStatus(int $value, int $idContactInfoCamping)
     {
-        $data = DB::connection('mysqlAdmin')->table('contact_info_camping')
+        $data = DB::connection('mysqlAdmin')->table('contact_info_campings')
+            ->where('id_contact_info_camping', $idContactInfoCamping)
+            ->update(['id_status' => $value]);
+
+    }
+
+    /*private function statusToBeUpdated(int $idContactInfoCamping)
+    {
+        $data = DB::connection('mysqlAdmin')->table('contact_info_campings')
             ->where('id_contact_info_camping', $idContactInfoCamping)
             ->update(['id_status' => 4]);
 
-    }
+    }*/
 }

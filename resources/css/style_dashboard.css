@@ -1,6 +1,3 @@
-.header-dashboard  {
-    border: 2px solid red;
-}
 .header-dashboard .dashboard-title  {
     background-color: #272D36;
     color: #C0C0C0;
@@ -89,6 +86,10 @@
 }
 .dashboard-main .main .container-photos-camp  {
     border: 3px solid blue;
+}
+.dashboard-main .main .container-photos-camp .photo-camping  {
+    height: 100%;
+    width: 100%;
 }
 .color-green  {
     color: green;

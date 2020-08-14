@@ -37337,7 +37337,9 @@ __webpack_require__(/*! ./scripts/script_header */ "./resources/js/scripts/scrip
 
 __webpack_require__(/*! ./scripts/script_dashboard */ "./resources/js/scripts/script_dashboard.js");
 
-__webpack_require__(/*! ./scripts/script_admin */ "./resources/js/scripts/script_admin.js"); //window.Vue = require('vue');
+__webpack_require__(/*! ./scripts/script_admin */ "./resources/js/scripts/script_admin.js");
+
+__webpack_require__(/*! ./scripts/script_validation */ "./resources/js/scripts/script_validation.js"); //window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -37596,6 +37598,29 @@ $(document).ready(function () {
 
   $('.header .btn-login').on('click', function () {
     loginBoxShowHide();
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/scripts/script_validation.js":
+/*!***************************************************!*\
+  !*** ./resources/js/scripts/script_validation.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  var $role = $('.main-register input[name="user-role"]');
+
+  function preventSubmit(e) {
+    if (!$role.is(':checked')) {
+      e.preventDefault();
+    }
+  }
+
+  $('.register-form').on('submit', function (e) {
+    preventSubmit(e);
   });
 });
 

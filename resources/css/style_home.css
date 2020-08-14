@@ -1,6 +1,6 @@
-.main-home  {
+/*.main-home  {
     bordeR: 2px solid orange;
-}
+}*/
 .main-home .div-bg-img  {
     background: url('/../images/home/bg-img-home.jpg');
     -webkit-background-size: cover;
@@ -63,7 +63,7 @@
     color: silver;
 }
 .main-home .div-last-updates  {
-    border: 2px solid yellow;
+    /*border: 2px solid yellow;*/
     padding-top: 100px;
 }
 .main-home .div-last-updates .container-camping-in-last-updates  {
@@ -205,11 +205,11 @@
 }
 @media (min-width: 1200px){
     .main-home .div-last-updates  {
-        border: 2px solid green;
+        /*border: 2px solid green;*/
         width: 1200px;
     }
     .main-home .div-our-recommendations {
-        border: 2px solid green;
+        /*border: 2px solid green;*/
         width: 1200px;
     }
 }

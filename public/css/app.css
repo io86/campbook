@@ -11033,9 +11033,9 @@ a.text-dark:focus {
   }
 }
 
-.main-home {
-  bordeR: 2px solid orange;
-}
+/*.main-home  {
+    bordeR: 2px solid orange;
+}*/
 
 .main-home .div-bg-img {
   background: url("/../images/home/bg-img-home.jpg");
@@ -11103,7 +11103,7 @@ a.text-dark:focus {
 }
 
 .main-home .div-last-updates {
-  border: 2px solid yellow;
+  /*border: 2px solid yellow;*/
   padding-top: 100px;
 }
 
@@ -11276,12 +11276,12 @@ a.text-dark:focus {
 
 @media (min-width: 1200px) {
   .main-home .div-last-updates {
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     width: 1200px;
   }
 
   .main-home .div-our-recommendations {
-    border: 2px solid green;
+    /*border: 2px solid green;*/
     width: 1200px;
   }
 }
@@ -11493,10 +11493,6 @@ a.text-dark:focus {
   }
 }
 
-.header-dashboard {
-  border: 2px solid red;
-}
-
 .header-dashboard .dashboard-title {
   background-color: #272D36;
   color: #C0C0C0;
@@ -11609,6 +11605,11 @@ a.text-dark:focus {
 
 .dashboard-main .main .container-photos-camp {
   border: 3px solid blue;
+}
+
+.dashboard-main .main .container-photos-camp .photo-camping {
+  height: 100%;
+  width: 100%;
 }
 
 .color-green {

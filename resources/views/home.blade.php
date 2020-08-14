@@ -18,7 +18,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-12 col-md-4" style="border: 2px solid blue;">
+        <div class="col-12 col-md-4">
             <div class="ml-auto mr-auto div-search mt-4">
                 <input type="search" name="search-camping" class="p-1 float-left">
                 <div class="float-right pb-2 pt-2 pl-2 pr-2 div-search-btn">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="row ml-auto mr-auto div-last-updates" style="border: 3px solid green;">
+    <div class="row ml-auto mr-auto div-last-updates">
         <div class="col-12">
             <h2 class="text-center">LAST UPDATES</h2>
         </div>
@@ -50,7 +50,7 @@
             @endforeach
         @endif
     </div>
-    <div class="row ml-auto mr-auto div-our-recommendations" style="border: 3px solid green;">
+    <div class="row ml-auto mr-auto div-our-recommendations">
         <div class="col-12">
             <h2 class="text-center">OUR RECOMMENDATIONS</h2>
         </div>
