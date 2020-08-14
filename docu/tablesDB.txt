@@ -1,0 +1,15 @@
+---------------
+   DATABASE
+---------------
+
+1. users (id_user, username, password, email, email_verified_at, remember_token, created_at, updated_at, id_role)
+2. contact_info_camping (id_contact_info_camping, email_camping, website, tel, postcode, published_at, created_at, updated_at, id_user, id_status)
+3. campings_gr (id_camping_gr, name_gr, address_gr, city_gr, area_gr, id_contact_info_gr)
+4. campings_en (id_camping_en, name_en, address_en, city_en, area_en, id_contact_info_en)
+5. facilities (id_facilities, distance_sea, places, area_sq, rooms, restaurant, market, bar, cooking_facil, ironic_facil, hanticapped_people, mobil_home, wifi, id_contact_info_camping)
+6. sports_facilities (id_sports_facilities, beach_volley, tennis, footbal_5x5, ping_pong, basket, id_contact_info_camping)
+7. descriptions (id_description, description_en, description_gr, id_contact_info_camping)
+8. photos_camping (id_photos_camping, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, id_contact_info_camping)
+9. cards (id_cards, visa, master, other_card, id_contact_info_camping)
+10. status (id_status, status)
+11. roles (id_role, role)
